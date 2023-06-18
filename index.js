@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const md = require('./utils/generateMarkdown.js');
-// TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -25,41 +25,27 @@ const questions = [
         message: 'Please provide instructions to effectively use project',
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: "Please select a license",
         choices: [
         {
             name: 'MIT',
-            value: {
-                name: 'MIT',
-                badgeID: 'MIT',
-                link: 'https://opensource.org/licenses/MIT',
-            },
         },
         {
             name: 'Apache',
-            value: {
-                name: 'Apache',
-                badgeID: 'Apache_2.0',
-                link: 'https://opensource.org/licenses/MIT',
-            },
         },
         {
-            name: 'GNU',
-            value: {
-                name: 'GNU',
-                badgeID: 'GPLv3',
-                link: 'https://www.gnu.org/licenses/gpl-3.0',
-            },
+            name: 'GNU General Public',
+        },
+        {
+            name: 'Boost Software',
+        },
+        {
+            name: 'Eclipse',
         },
         {
             name: 'none',
-            value: {
-                name: 'none',
-                badgeID: 'none',
-                link: 'none',
-            },
         },
         ],
     },
@@ -88,14 +74,12 @@ const questions = [
 
 ];
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, md.generateMarkdown(data), (err) => 
         err ? console.log(err) : console.log("Success")
     );
 }
 
-// TODO: Create a function to initialize app
 async function init() {
     inquirer.prompt(questions)
         .then((response) => {
@@ -103,5 +87,4 @@ async function init() {
         })
 }
 
-// Function call to initialize app
 init();
