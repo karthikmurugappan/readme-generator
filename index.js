@@ -86,7 +86,7 @@ function writeToFile(fileName, data) {
 async function init() {
     inquirer.prompt(questions)
         .then((response) => {
-            writeToFile('README-Generated.md', response);
+            writeToFile('README.md', response);
         })
 }
 
