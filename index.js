@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const md = require('./utils/generateMarkdown.js');
@@ -52,26 +51,30 @@ const questions = [
     {
         type: 'list',
         name: 'collaborators',
-        message: "Did you work with any collaborators",
+        message: "Did you work with any Collaborators",
         choices: ['Yes', 'No'],
     },
     {
         type: 'input',
         name: 'collabNames',
-        message: 'Please list the names of the collaborators',
+        message: 'Please list the names of the Collaborators',
         when: (response) => response.collaborators === 'Yes',
     },
     {
         type: 'input',
+        name: 'testing',
+        message: 'Please provide Testing Instructions'
+    },
+    {
+        type: 'input',
         name: 'github',
-        message: "Please provide your GitHub username",
+        message: "Please provide your GitHub Username",
     },
     {
         type: 'input',
         name: 'email',
         message: 'Please provide your Email',
     },
-
 ];
 
 function writeToFile(fileName, data) {

@@ -5,22 +5,30 @@ function generateMarkdown(data) {
 ${data.description}
 
 ## Table of Contents
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+3. [License](#License)
+4. [Collaborators](#Collaborators)
+5. [Testing](#Testing)
+6. [Contact](#Contact)
 
-
-## Installation
+## Installation <a name = "Installation"></a>
 ${data.installation}
 
-## Usage
+## Usage <a name = "Usage"></a>
 ${data.usage}
 
-## License
+## License <a name = "License"></a>
 ${data.license}
 
-## How to Contribute
+## Collaborators <a name = "Collaborators"></a>
+${data.collabNames}
 
-## Tests
+## Testing <a name = "Testing"></a>
+${data.testing}
 
-## Contact
+## Contact <a name = "Contact"></a>
+If you have any questions or concerns, please Email me at: ${data.email}. Feel free to check my Github Profile as well: [${data.github}](https://github.com/${data.github}).
 `
 }
 
